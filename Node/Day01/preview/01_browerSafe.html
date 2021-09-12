@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>浏览器的同源策略限制</title>
+    </head>
+
+    <body>
+        <h4>浏览器的安全限制策略</h4>
+
+        <script>
+            // 一个基于浏览器的AJAX请求, 会收到浏览器的同源策略的影响。
+            const xhr = new XMLHttpRequest();
+            xhr.open("get", "http://m.maoyan.com/ajax/moreClassicList?sortId=1&showType=3&limit=10&offset");
+            xhr.send();
+        </script>
+
+       <!-- 下列内容来自于02_server.js的运行结果 -->
+        <section>
+            <a href="/movie/1360592">
+                <div class="classic-movie">
+                    <div class="avatar">
+                        <img
+                            src="https://p0.meituan.net/movie/dd43ef1ec9cc590a6f0a70fd6c3dada92170902.jpg@1l_1e_1c_128w_180h"
+                            onerror="this.style.visibility='hidden'"
+                        />
+                    </div>
+                    <div class="movie-info">
+                        <div class="title line-ellipsis">当男人恋爱时</div>
+                        <div class="english-title line-ellipsis">Man in Love</div>
+                        <div class="actors line-ellipsis">爱情,剧情</div>
+                        <div class="show-info line-ellipsis">2021-06-11 16:00中国大陆上映</div>
+                    </div>
+                    <div class="movie-score">
+                        <div class="score line-ellipsis">
+                            <span class="grade">8.4</span>
+                            <span>分</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/movie/343270">
+                <div class="classic-movie">
+                    <div class="avatar">
+                        <img
+                            src="https://p0.meituan.net/movie/7574148ff4bb0275d369321632c4bf3a356633.jpg@1l_1e_1c_128w_180h"
+                            onerror="this.style.visibility='hidden'"
+                        />
+                    </div>
+                    <div class="movie-info">
+                        <div class="title line-ellipsis">小花仙奇迹少女</div>
+                        <div class="english-title line-ellipsis">Flower Angel</div>
+                        <div class="actors line-ellipsis">动画,奇幻,冒险</div>
+                        <div class="show-info line-ellipsis">2021-08-21 09:00中国大陆上映</div>
+                    </div>
+                    <div class="movie-score">
+                        <div class="no-score">暂无评分</div>
+                    </div>
+                </div>
+            </a>
+            <a href="/movie/335440">
+                <div class="classic-movie">
+                    <div class="avatar">
+                        <img
+                            src="https://p1.meituan.net/movie/085622333a9c410d2396d8155c579f754499052.jpg@1l_1e_1c_128w_180h"
+                            onerror="this.style.visibility='hidden'"
+                        />
+                    </div>
+                    <div class="movie-info">
+                        <div class="title line-ellipsis">混沌行走</div>
+                        <div class="english-title line-ellipsis">Chaos Walking</div>
+                        <div class="actors line-ellipsis">科幻,冒险,动作</div>
+                        <div class="show-info line-ellipsis">2021-08-27中国大陆上映</div>
+                    </div>
+                    <div class="movie-score">
+                        <div class="score line-ellipsis">
+                            <span class="grade">7.0</span>
+                            <span>分</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/movie/343810">
+                <div class="classic-movie">
+                    <div class="avatar">
+                        <img
+                            src="https://p1.meituan.net/mmdb/bfa36d77c8ef372bf121eedc051a97ca278384.jpg@1l_1e_1c_128w_180h"
+                            onerror="this.style.visibility='hidden'"
+                        />
+                    </div>
+                    <div class="movie-info">
+                        <div class="title line-ellipsis">矮婆</div>
+                        <div class="actors line-ellipsis">剧情,家庭</div>
+                        <div class="show-info line-ellipsis">2021-09-07中国大陆上映</div>
+                    </div>
+                    <div class="movie-score">
+                        <div class="no-score">暂无评分</div>
+                    </div>
+                </div>
+            </a>
+            <a href="/movie/1198925">
+                <div class="classic-movie">
+                    <div class="avatar">
+                        <img
+                            src="https://p0.meituan.net/moviemachine/48fdec1c3f34533f1e1b907c5e8a61f01905931.jpg@1l_1e_1c_128w_180h"
+                            onerror="this.style.visibility='hidden'"
+                        />
+                    </div>
+                    <div class="movie-info">
+                        <div class="title line-ellipsis">蜘蛛侠：英雄远征</div>
+                        <div class="english-title line-ellipsis">Spider-Man: Far From Home</div>
+                        <div class="actors line-ellipsis">动作,冒险,科幻</div>
+                        <div class="show-info line-ellipsis">2019-06-28中国大陆上映</div>
+                    </div>
+                    <div class="movie-score">
+                        <div class="score line-ellipsis">
+                            <span class="grade">9.0</span>
+                            <span>分</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/movie/346008">
+                <div class="classic-movie">
+                    <div class="avatar">
+                        <img
+                            src="https://p0.meituan.net/moviemachine/41b492d4f4ea8f97c8984b44167653f1484321.jpg@1l_1e_1c_128w_180h"
+                            onerror="this.style.visibility='hidden'"
+                        />
+                    </div>
+                    <div class="movie-info">
+                        <div class="title line-ellipsis">X特遣队：全员集结</div>
+                        <div class="english-title line-ellipsis">The Suicide Squad</div>
+                        <div class="actors line-ellipsis">喜剧,动作,科幻,冒险</div>
+                        <div class="show-info line-ellipsis">2021-08-06美国院线及HBO MAX上映</div>
+                    </div>
+                    <div class="movie-score">
+                        <div class="no-score">暂无评分</div>
+                    </div>
+                </div>
+            </a>
+            <a href="/movie/1299178">
+                <div class="classic-movie">
+                    <div class="avatar">
+                        <img
+                            src="https://p1.meituan.net/moviemachine/1d67ba8aec840c3e7ecdac6cdbd915c7293706.jpg@1l_1e_1c_128w_180h"
+                            onerror="this.style.visibility='hidden'"
+                        />
+                    </div>
+                    <div class="movie-info">
+                        <div class="title line-ellipsis">名侦探柯南：绯色的子弹</div>
+                        <div class="english-title line-ellipsis">名探偵コナン 緋色の弾丸</div>
+                        <div class="actors line-ellipsis">动作,动画,悬疑</div>
+                        <div class="show-info line-ellipsis">2021-04-17中国大陆上映</div>
+                    </div>
+                    <div class="movie-score">
+                        <div class="score line-ellipsis">
+                            <span class="grade">8.3</span>
+                            <span>分</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/movie/1301976">
+                <div class="classic-movie">
+                    <div class="avatar">
+                        <img
+                            src="https://p0.meituan.net/movie/1f0135f92647e453d0455ac802860c262367521.jpg@1l_1e_1c_128w_180h"
+                            onerror="this.style.visibility='hidden'"
+                        />
+                    </div>
+                    <div class="movie-info">
+                        <div class="title line-ellipsis">乔西的虎与鱼</div>
+                        <div class="english-title line-ellipsis">ジョゼと虎と魚たち</div>
+                        <div class="actors line-ellipsis">动画,爱情,青春</div>
+                        <div class="show-info line-ellipsis">2021-08-20中国大陆上映</div>
+                    </div>
+                    <div class="movie-score">
+                        <div class="score line-ellipsis">
+                            <span class="grade">9.0</span>
+                            <span>分</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/movie/1278598">
+                <div class="classic-movie">
+                    <div class="avatar">
+                        <img
+                            src="https://p0.meituan.net/movie/69b9d96e28c76e3b26d8765a7a74225c3439720.jpg@1l_1e_1c_128w_180h"
+                            onerror="this.style.visibility='hidden'"
+                        />
+                    </div>
+                    <div class="movie-info">
+                        <div class="title line-ellipsis">你好世界</div>
+                        <div class="english-title line-ellipsis">HELLO WORLD</div>
+                        <div class="actors line-ellipsis">爱情,奇幻,动画</div>
+                        <div class="show-info line-ellipsis">2021-06-11中国大陆上映</div>
+                    </div>
+                    <div class="movie-score">
+                        <div class="score line-ellipsis">
+                            <span class="grade">8.8</span>
+                            <span>分</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/movie/341178">
+                <div class="classic-movie">
+                    <div class="avatar">
+                        <img
+                            src="https://p0.meituan.net/movie/52c8c57caeeaacbeaa3d54eec62023fd483970.jpg@1l_1e_1c_128w_180h"
+                            onerror="this.style.visibility='hidden'"
+                        />
+                    </div>
+                    <div class="movie-info">
+                        <div class="title line-ellipsis">头号玩家(IMAX 3D)</div>
+                        <div class="english-title line-ellipsis">Ready Player One</div>
+                        <div class="actors line-ellipsis">动作,冒险,科幻</div>
+                        <div class="show-info line-ellipsis">2018-03-30中国大陆上映</div>
+                    </div>
+                    <div class="movie-score">
+                        <div class="score line-ellipsis">
+                            <span class="grade">9.0</span>
+                            <span>分</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </section>
+    </body>
+</html>
